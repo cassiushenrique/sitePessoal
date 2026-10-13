@@ -1,51 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
     content="Página acadêmica de Cássius Henrique Xavier Oliveira — professor e pesquisador em Estatística na UFLA."
-  />
+  >
 
-  <meta name="theme-color" content="#12372A" />
+  <meta name="theme-color" content="#12372A">
 
   <title>Cássius Henrique Xavier Oliveira | UFLA</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css">
 
   <!-- =========================================================
-       ESTILOS ESPECÍFICOS DO INTEGRA
+       ESTILOS COMPLEMENTARES
+       Preservam o CSS original do site.
        ========================================================= -->
 
   <style>
+
+    /* ---------------------------------------------------------
+       FOTO DO PERFIL NO CABEÇALHO
+       --------------------------------------------------------- */
+
+    .brand-mark.profile-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .brand-mark.profile-mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
+    }
+
+
+    /* ---------------------------------------------------------
+       PESQUISA — TESE E DISSERTAÇÃO
+       --------------------------------------------------------- */
+
+    .academic-works {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .academic-works .feature-project {
+      margin-top: 0;
+    }
+
+    .academic-works .feature-project h3 {
+      overflow-wrap: anywhere;
+    }
+
+    .academic-works .feature-project .text-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+
+    /* ---------------------------------------------------------
+       LOGOS DAS ATIVIDADES DE EXTENSÃO
+       --------------------------------------------------------- */
 
     .integra-extension .extension-intro {
       margin-bottom: 18px;
     }
 
-    .integra-extension .project-card {
+    .integra-extension .project-card,
+    .clube-extension .project-card {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
 
-    .integra-logo {
+    .extension-logo {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,7 +105,6 @@
       height: 92px;
 
       margin-bottom: 24px;
-
       border-radius: 18px;
 
       background: #1D4938;
@@ -66,16 +116,162 @@
       line-height: 1;
     }
 
-    .integra-extension .project-card .btn {
+    .clube-logo {
+      font-size: 68px;
+    }
+
+    .integra-extension .project-card .btn,
+    .clube-extension .project-card .btn {
       margin-top: 12px;
+    }
+
+
+    /* ---------------------------------------------------------
+       ENDEREÇO PROFISSIONAL
+       --------------------------------------------------------- */
+
+    .address-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .address-content {
+      min-width: 0;
+    }
+
+    .address-content h2 {
+      margin-bottom: 24px;
+    }
+
+    .address-content p {
+      margin-bottom: 18px;
+    }
+
+    .address-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 28px 0;
+    }
+
+    .address-detail {
+      padding-left: 18px;
+      border-left: 3px solid #12372A;
+    }
+
+    .address-detail strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .address-detail p {
+      margin: 0;
+    }
+
+    .address-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+
+    /* ---------------------------------------------------------
+       GALERIA DE FOTOS DO CÂMPUS
+       --------------------------------------------------------- */
+
+    .campus-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .campus-photo {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #DCE5DD;
+    }
+
+    .campus-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .campus-photo:hover img {
+      transform: scale(1.035);
+    }
+
+    .campus-photo figcaption {
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #40594B;
+    }
+
+    .campus-photo.featured-photo {
+      grid-column: 1 / -1;
+    }
+
+    .campus-photo.featured-photo img {
+      aspect-ratio: 16 / 7;
+    }
+
+
+    /* ---------------------------------------------------------
+       RESPONSIVIDADE
+       --------------------------------------------------------- */
+
+    @media (max-width: 900px) {
+
+      .address-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
     }
 
     @media (max-width: 768px) {
 
-      .integra-logo {
+      .extension-logo {
         width: 76px;
         height: 76px;
         font-size: 54px;
+      }
+
+      .clube-logo {
+        font-size: 58px;
+      }
+
+      .academic-works {
+        gap: 16px;
+      }
+
+      .campus-gallery {
+        gap: 10px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .campus-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .campus-photo.featured-photo {
+        grid-column: auto;
+      }
+
+      .campus-photo.featured-photo img {
+        aspect-ratio: 4 / 3;
       }
 
     }
@@ -98,13 +294,23 @@
       href="#inicio"
       aria-label="Página inicial"
     >
-      <span class="brand-mark">CH</span>
+
+      <span class="brand-mark profile-mark">
+
+        <img
+          src="assets/cassius.jpg"
+          alt="Fotografia de Cássius Oliveira"
+        >
+
+      </span>
 
       <span>
         <strong>Cássius Oliveira</strong>
         <small>Estatística · UFLA</small>
       </span>
+
     </a>
+
 
     <button
       class="menu-btn"
@@ -114,17 +320,18 @@
       ☰
     </button>
 
-    <nav
-      class="nav"
-      aria-label="Navegação principal"
-    >
+
+    <nav class="nav" aria-label="Navegação principal">
+
       <a href="#sobre">Sobre</a>
       <a href="#pesquisa">Pesquisa</a>
       <a href="#ensino">Ensino</a>
       <a href="#entidade-extensao">Entidade de Extensão</a>
       <a href="#extensao">Extensão</a>
       <a href="#trajetoria">Trajetória</a>
+      <a href="#endereco">Endereço</a>
       <a href="#contato">Contato</a>
+
     </nav>
 
   </header>
@@ -136,10 +343,7 @@
          INÍCIO
          ========================================================= -->
 
-    <section
-      class="hero"
-      id="inicio"
-    >
+    <section class="hero" id="inicio">
 
       <div class="hero-copy">
 
@@ -159,12 +363,10 @@
           e Confiabilidade.
         </p>
 
+
         <div class="hero-actions">
 
-          <a
-            class="btn primary"
-            href="#pesquisa"
-          >
+          <a class="btn primary" href="#pesquisa">
             Conheça minha atuação
           </a>
 
@@ -172,7 +374,7 @@
             class="btn secondary"
             href="http://lattes.cnpq.br/8196427969580831"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Currículo Lattes ↗
           </a>
@@ -180,38 +382,22 @@
         </div>
 
 
-        <div
-          class="quick-links"
-          aria-label="Perfis acadêmicos"
-        >
+        <div class="quick-links" aria-label="Perfis acadêmicos">
 
           <a
             href="https://orcid.org/0000-0001-9051-3237"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             ORCID ↗
           </a>
 
-
-          <!--
-          GOOGLE SCHOLAR
-          Temporariamente oculto.
-
-          <a
-            href="https://scholar.google.com/citations?user=zLccracAAAAJ&hl=pt-BR"
-            target="_blank"
-            rel="noopener"
-          >
-            Google Scholar ↗
-          </a>
-          -->
-
+          <!-- Google Scholar temporariamente oculto. -->
 
           <a
             href="https://ictin.ufla.br/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             ICTIN/UFLA ↗
           </a>
@@ -228,15 +414,13 @@
           <img
             src="assets/cassius.jpg"
             alt="Retrato de Cássius Henrique Xavier Oliveira"
-          />
+          >
 
         </div>
 
         <div class="portrait-note">
 
-          <strong>
-            UFLA · ICTIN
-          </strong>
+          <strong>UFLA · ICTIN</strong>
 
           <span>
             Câmpus São Sebastião do Paraíso
@@ -251,13 +435,10 @@
 
 
     <!-- =========================================================
-         SOBRE
+         01 · SOBRE
          ========================================================= -->
 
-    <section
-      class="section about"
-      id="sobre"
-    >
+    <section class="section about" id="sobre">
 
       <div class="section-label">
         01 · SOBRE
@@ -270,6 +451,7 @@
           Estatística aplicada a problemas reais
           de ciência, engenharia e tecnologia.
         </h2>
+
 
         <div class="about-text">
 
@@ -328,13 +510,10 @@
 
 
     <!-- =========================================================
-         PESQUISA
+         02 · PESQUISA
          ========================================================= -->
 
-    <section
-      class="section dark"
-      id="pesquisa"
-    >
+    <section class="section dark" id="pesquisa">
 
       <div class="section-label light">
         02 · PESQUISA
@@ -438,36 +617,83 @@
       </div>
 
 
-      <div class="feature-project">
+      <!-- =====================================================
+           PRODUÇÃO ACADÊMICA
+           ===================================================== -->
 
-        <div>
+      <div class="academic-works">
 
-          <span class="tag">
-            TESE DE DOUTORADO
-          </span>
+        <!-- TESE DE DOUTORADO -->
 
-          <h3>
-            A class of semiparametric joint frailty-copula
-            models for recurrent events subjected to a
-            terminal event
-          </h3>
+        <div class="feature-project">
 
-          <p>
-            Pesquisa desenvolvida no Doutorado em Estatística
-            da UFMG, concluído em 2024.
-          </p>
+          <div>
+
+            <span class="tag">
+              TESE DE DOUTORADO · UFMG
+            </span>
+
+            <h3>
+              A class of semiparametric joint frailty-copula
+              models for recurrent events subjected to a
+              terminal event
+            </h3>
+
+            <p>
+              Pesquisa desenvolvida no Doutorado em Estatística
+              da Universidade Federal de Minas Gerais,
+              concluído em 2024.
+            </p>
+
+          </div>
+
+
+          <a
+            class="text-link light-link"
+            href="https://repositorio.ufmg.br/items/903860c5-5d7c-496d-b608-1fdf38b86382"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar tese de doutorado ↗
+          </a>
 
         </div>
 
 
-        <a
-          class="text-link light-link"
-          href="http://lattes.cnpq.br/8196427969580831"
-          target="_blank"
-          rel="noopener"
-        >
-          Ver trajetória de pesquisa no Lattes ↗
-        </a>
+        <!-- DISSERTAÇÃO DE MESTRADO -->
+
+        <div class="feature-project">
+
+          <div>
+
+            <span class="tag">
+              DISSERTAÇÃO DE MESTRADO · UFMG
+            </span>
+
+            <h3>
+              Dissertação de Mestrado em Engenharia de Produção
+            </h3>
+
+            <p>
+              Pesquisa desenvolvida no Mestrado em Engenharia
+              de Produção da Universidade Federal de Minas Gerais,
+              concluído em 2016, com atuação em modelagem
+              estocástica e confiabilidade.
+            </p>
+
+          </div>
+
+
+          <a
+            class="text-link light-link"
+            href="https://repositorio.ufmg.br/items/637f7261-bf6a-48e4-a69f-19fe12033c92"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar dissertação de mestrado ↗
+          </a>
+
+        </div>
 
       </div>
 
@@ -476,13 +702,10 @@
 
 
     <!-- =========================================================
-         ENSINO
+         03 · ENSINO
          ========================================================= -->
 
-    <section
-      class="section"
-      id="ensino"
-    >
+    <section class="section" id="ensino">
 
       <div class="section-label">
         03 · ENSINO
@@ -521,10 +744,6 @@
 
       <div class="teaching-grid">
 
-        <!-- =====================================================
-             DISCIPLINA 1
-             ===================================================== -->
-
         <a
           class="teaching-card featured teaching-link"
           href="https://cassiushenrique.github.io/estatisticaGraduacao/index.html"
@@ -546,10 +765,6 @@
 
         </a>
 
-
-        <!-- =====================================================
-             DISCIPLINA 2
-             ===================================================== -->
 
         <a
           class="teaching-card featured teaching-link"
@@ -682,7 +897,7 @@
         <article class="project-card">
 
           <div
-            class="integra-logo"
+            class="extension-logo"
             role="img"
             aria-label="Símbolo do INTEGRA: integral tripla"
           >
@@ -728,17 +943,14 @@
          05 · EXTENSÃO — CLUBE DE EXATAS
          ========================================================= -->
 
-    <section
-      class="section extension"
-      id="extensao"
-    >
+    <section class="section extension" id="extensao">
 
       <div class="section-label">
         05 · EXTENSÃO
       </div>
 
 
-      <div class="extension-grid">
+      <div class="extension-grid clube-extension">
 
         <!-- COLUNA ESQUERDA -->
 
@@ -766,6 +978,14 @@
 
         <article class="project-card">
 
+          <div
+            class="extension-logo clube-logo"
+            role="img"
+            aria-label="Símbolo do Clube de Exatas: somatório"
+          >
+            ∑
+          </div>
+
           <span class="tag">
             PROJETO DE EXTENSÃO · UFLA
           </span>
@@ -784,7 +1004,7 @@
             class="btn primary"
             href="https://cassiushenrique.github.io/clube-de-exatas/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Conhecer o projeto ↗
           </a>
@@ -794,10 +1014,7 @@
       </div>
 
 
-
-      <!-- =====================================================
-           EXPERIÊNCIA ANTERIOR EM EXTENSÃO
-           ===================================================== -->
+      <!-- EXPERIÊNCIA ANTERIOR -->
 
       <div class="past-extension">
 
@@ -987,13 +1204,192 @@
 
 
     <!-- =========================================================
+         07 · ENDEREÇO PROFISSIONAL
+         ========================================================= -->
+
+    <section class="section" id="endereco">
+
+      <div class="section-label">
+        07 · ENDEREÇO PROFISSIONAL
+      </div>
+
+
+      <div class="address-grid">
+
+        <!-- COLUNA ESQUERDA -->
+
+        <div class="address-content">
+
+          <p class="kicker">
+            UFLA · CÂMPUS PARAÍSO
+          </p>
+
+          <h2>
+            Meu local de trabalho na
+            Universidade Federal de Lavras.
+          </h2>
+
+          <p>
+            Atuo no Instituto de Ciência, Tecnologia e
+            Inovação (ICTIN), localizado no Câmpus Paraíso
+            da Universidade Federal de Lavras, em
+            São Sebastião do Paraíso, Minas Gerais.
+          </p>
+
+
+          <div class="address-details">
+
+            <div class="address-detail">
+
+              <strong>
+                Instituição
+              </strong>
+
+              <p>
+                Universidade Federal de Lavras (UFLA)<br>
+                Instituto de Ciência, Tecnologia e Inovação (ICTIN)<br>
+                Câmpus Paraíso
+              </p>
+
+            </div>
+
+
+            <div class="address-detail">
+
+              <strong>
+                Endereço
+              </strong>
+
+              <p>
+                Rua Antônio Carlos Pinheiro Alcântara, nº 855<br>
+                Jardim Mediterranée<br>
+                São Sebastião do Paraíso – MG<br>
+                CEP 37950-000
+              </p>
+
+            </div>
+
+
+            <div class="address-detail">
+
+              <strong>
+                Localização no câmpus
+              </strong>
+
+              <p>
+                Sala 1 dos Docentes<br>
+                Bloco de Salas dos Docentes
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="address-actions">
+
+            <a
+              class="btn primary"
+              href="https://ictin.ufla.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Acessar site do ICTIN ↗
+            </a>
+
+            <a
+              class="btn secondary"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Antonio+Carlos+Pinheiro+Alcantara+855+Sao+Sebastiao+do+Paraiso+MG"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver endereço no mapa ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- COLUNA DIREITA: FOTOGRAFIAS -->
+
+        <div
+          class="campus-gallery"
+          aria-label="Galeria de fotografias do Câmpus Paraíso"
+        >
+
+          <figure class="campus-photo featured-photo">
+
+            <img
+              src="assets/campus-paraiso-2.jpg"
+              alt="Vista aérea do Câmpus Paraíso da Universidade Federal de Lavras"
+              loading="lazy"
+            >
+
+            <figcaption>
+              Vista aérea do Câmpus Paraíso
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="campus-photo">
+
+            <img
+              src="assets/campus-paraiso-1.jpeg"
+              alt="Edificação do Câmpus Paraíso"
+              loading="lazy"
+            >
+
+            <figcaption>
+              Instalações do câmpus
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="campus-photo">
+
+            <img
+              src="assets/campus-paraiso-3.jpeg"
+              alt="Fachada de uma edificação do Câmpus Paraíso"
+              loading="lazy"
+            >
+
+            <figcaption>
+              Estrutura acadêmica
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="campus-photo">
+
+            <img
+              src="assets/campus-paraiso-4.jpeg"
+              alt="Entrada do Câmpus Paraíso da UFLA"
+              loading="lazy"
+            >
+
+            <figcaption>
+              Entrada do Câmpus Paraíso
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
          CONTATO
          ========================================================= -->
 
-    <section
-      class="contact"
-      id="contato"
-    >
+    <section class="contact" id="contato">
 
       <p class="eyebrow">
         CONTATO & PERFIS
@@ -1026,7 +1422,7 @@
         <a
           href="http://lattes.cnpq.br/8196427969580831"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
 
           <span>
@@ -1041,7 +1437,7 @@
         <a
           href="https://orcid.org/0000-0001-9051-3237"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
 
           <span>
@@ -1053,30 +1449,13 @@
         </a>
 
 
-        <!--
-        GOOGLE SCHOLAR
-        Temporariamente oculto.
-
-        <a
-          href="https://scholar.google.com/citations?user=zLccracAAAAJ&hl=pt-BR"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <span>
-            Google Scholar
-          </span>
-
-          <b>↗</b>
-
-        </a>
-        -->
+        <!-- Google Scholar temporariamente oculto. -->
 
 
         <a
           href="https://ictin.ufla.br/"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
 
           <span>
@@ -1139,5 +1518,4 @@
 </body>
 
 </html>
-
 
