@@ -28,6 +28,64 @@
   >
 
   <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- =========================================================
+       ESTILOS EXCLUSIVOS DO INTEGRA
+       ========================================================= -->
+
+  <style>
+    .integra-project-content {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      align-items: start;
+      gap: 28px;
+    }
+
+    .integra-symbol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      height: 110px;
+      border-radius: 22px;
+      background: #12372A;
+      color: #DDF76C;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 72px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .integra-project {
+      margin-top: 24px;
+    }
+
+    .integra-project-text {
+      min-width: 0;
+    }
+
+    .integra-project-text p {
+      margin-bottom: 16px;
+    }
+
+    .integra-project-text .btn {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .integra-project-content {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .integra-symbol {
+        width: 88px;
+        height: 88px;
+        font-size: 58px;
+      }
+    }
+  </style>
+
 </head>
 
 
@@ -93,7 +151,7 @@
         </p>
 
         <h1>
-          Cássius Henrique<br> 
+          Cássius Henrique<br>
           <span>Xavier Oliveira.</span>
         </h1>
 
@@ -142,7 +200,6 @@
           <!--
           GOOGLE SCHOLAR
           Temporariamente oculto.
-          Para reativá-lo, basta remover os marcadores de comentário.
 
           <a
             href="https://scholar.google.com/citations?user=zLccracAAAAJ&hl=pt-BR"
@@ -217,6 +274,7 @@
           de ciência, engenharia e tecnologia.
         </h2>
 
+        <div class="about-text">
 
           <p>
             Sou professor e pesquisador do
@@ -448,27 +506,26 @@
           </h2>
 
         </div>
-        
-<div class="about-text">
 
-    <p>
-        Atuo na formação quantitativa de estudantes de graduação,
-        articulando fundamentos matemáticos e estatísticos,
-        interpretação de dados, ferramentas computacionais
-        e problemas aplicados.
-    </p>
 
-</div>
+        <div class="about-text">
 
-</div> <!-- Fim de section-heading -->
+          <p>
+            Atuo na formação quantitativa de estudantes de graduação,
+            articulando fundamentos matemáticos e estatísticos,
+            interpretação de dados, ferramentas computacionais
+            e problemas aplicados.
+          </p>
+
+        </div>
+
+      </div>
 
 
       <div class="teaching-grid">
 
         <!-- =====================================================
              DISCIPLINA 1
-             Site próprio será adicionado posteriormente.
-             Substituir href="#" pela URL do site da disciplina.
              ===================================================== -->
 
         <a
@@ -495,8 +552,6 @@
 
         <!-- =====================================================
              DISCIPLINA 2
-             Site próprio será adicionado posteriormente.
-             Substituir href="#" pela URL do site da disciplina.
              ===================================================== -->
 
         <a
@@ -599,6 +654,10 @@
         </div>
 
 
+        <!-- =====================================================
+             CLUBE DE EXATAS
+             ===================================================== -->
+
         <article class="project-card">
 
           <span class="tag">
@@ -628,6 +687,95 @@
 
       </div>
 
+
+
+      <!-- =====================================================
+           INTEGRA — GRUPO DE ESTUDOS EM BASES MATEMÁTICAS B
+           ===================================================== -->
+
+      <article class="project-card integra-project">
+
+        <div class="integra-project-content">
+
+          <!-- Símbolo institucional do grupo -->
+
+          <div
+            class="integra-symbol"
+            role="img"
+            aria-label="Símbolo do INTEGRA: integral tripla"
+          >
+            ∭
+          </div>
+
+
+          <!-- Informações do grupo -->
+
+          <div class="integra-project-text">
+
+            <span class="tag">
+              GRUPO DE ESTUDOS · UFLA
+            </span>
+
+            <h3>
+              INTEGRA — Grupo de Estudos em Bases Matemáticas B
+            </h3>
+
+            <p>
+              O INTEGRA é um grupo de estudos voltado ao
+              aprofundamento de conhecimentos em
+              <strong>Cálculo II e III</strong>,
+              por meio de encontros de estudo, resolução
+              colaborativa de exercícios, revisão de conceitos
+              fundamentais e discussão de aplicações matemáticas.
+            </p>
+
+            <p>
+              <strong>Objetivos:</strong>
+              fortalecer a aprendizagem em Matemática,
+              estimular o raciocínio lógico e a autonomia
+              dos estudantes, promover a troca de conhecimentos
+              e contribuir para a formação acadêmica
+              em ciência, tecnologia e engenharia.
+            </p>
+
+            <p>
+              <strong>Público-alvo:</strong>
+              estudantes da Universidade Federal de Lavras
+              interessados em desenvolver e aprofundar
+              seus conhecimentos matemáticos, incluindo
+              aqueles que não estejam atualmente matriculados
+              na disciplina de Bases Matemáticas B.
+            </p>
+
+            <p>
+              <strong>Inscrições e encontros:</strong>
+              o site oficial do INTEGRA reúne o formulário
+              de inscrição, as datas e os horários dos encontros,
+              os avisos e comunicados, além do link de acesso
+              ao grupo de WhatsApp.
+            </p>
+
+            <a
+              class="btn primary"
+              href="https://cassiushenrique.github.io/integraUFLA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar o site oficial do grupo de estudos INTEGRA"
+            >
+              Acessar site do INTEGRA ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================================
+           EXPERIÊNCIA ANTERIOR EM EXTENSÃO
+           ===================================================== -->
 
       <div class="past-extension">
 
@@ -816,7 +964,7 @@
 
 
 
-        <!-- =========================================================
+    <!-- =========================================================
          CONTATO
          ========================================================= -->
 
@@ -842,9 +990,7 @@
 
       <div class="contact-links">
 
-        <a
-          href="mailto:cassiushenrique@ufla.br"
-        >
+        <a href="mailto:cassiushenrique@ufla.br">
 
           <span>
             cassiushenrique@ufla.br
@@ -888,7 +1034,6 @@
         <!--
         GOOGLE SCHOLAR
         Temporariamente oculto.
-        Para reativá-lo, basta remover os marcadores de comentário.
 
         <a
           href="https://scholar.google.com/citations?user=zLccracAAAAJ&hl=pt-BR"
@@ -925,6 +1070,7 @@
     </section>
 
   </main>
+
 
 
   <!-- =========================================================
