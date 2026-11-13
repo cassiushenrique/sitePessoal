@@ -222,6 +222,37 @@
     }
 
 
+    /* EVENTOS E CURSOS */
+
+    .events-intro {
+      max-width: 800px;
+    }
+
+    .event-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .event-cards .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .event-cards .project-card .btn {
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .event-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
     /* RESPONSIVIDADE */
 
     @media (max-width: 900px) {
@@ -1016,88 +1047,124 @@
 
 
     
-<!-- =========================================================
-     06 · EVENTOS E CURSOS
-     ========================================================= -->
-<section class="section extension" id="eventos-cursos">
+    <!-- =========================================================
+         06 · EVENTOS E CURSOS
+         ========================================================= -->
 
-  <div class="section-label">
-    06 · EVENTOS E CURSOS
-  </div>
+    <section class="section extension events-section" id="eventos-cursos">
 
-  <div class="extension-grid">
-
-    <div>
-
-      <p class="kicker">
-        FORMAÇÃO · CAPACITAÇÃO
-      </p>
-
-      <h2>
-        Eventos e cursos de formação
-        acadêmica e profissional.
-      </h2>
-
-      <p class="extension-intro">
-        Atividades voltadas ao desenvolvimento de
-        competências em Estatística, programação,
-        análise de dados e métodos quantitativos,
-        articulando fundamentos teóricos e
-        aplicações práticas.
-      </p>
-
-    </div>
-
-    <article class="project-card">
-
-      <div
-        class="extension-logo"
-        role="img"
-        aria-label="Símbolo da linguagem R"
-        style="font-family: Manrope, sans-serif;
-               font-size: 56px;
-               font-weight: 800;"
-      >
-        R
+      <div class="section-label">
+        06 · EVENTOS E CURSOS
       </div>
 
-      <span class="tag">
-        OFICINA · PROGRAMAÇÃO E ESTATÍSTICA
-      </span>
+      <div class="events-intro">
 
-      <h3>
-        Introdução à Programação e
-        Análise de Dados com R
-      </h3>
+        <p class="kicker">
+          FORMAÇÃO · CAPACITAÇÃO
+        </p>
 
-      <p>
-        Oficina introdutória sobre a linguagem R,
-        contemplando fundamentos de programação,
-        manipulação de dados, estatística descritiva,
-        visualização gráfica e aplicações práticas.
-      </p>
+        <h2>
+          Eventos e cursos de formação
+          acadêmica e profissional.
+        </h2>
 
-      <p>
-        A página da oficina disponibiliza a apostila
-        para leitura on-line e download em PDF.
-      </p>
+        <p class="extension-intro">
+          Atividades voltadas ao desenvolvimento de
+          competências em Estatística, programação,
+          análise de dados e métodos quantitativos,
+          articulando fundamentos teóricos e
+          aplicações práticas.
+        </p>
 
-      <a
-        class="btn primary"
-        href="https://cassiushenrique.github.io/OficinaR/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Acessar página da oficina ↗
-      </a>
+      </div>
 
-    </article>
+      <div class="event-cards">
 
-  </div>
+        <article class="project-card">
 
-</section>
+          <div
+            class="extension-logo"
+            role="img"
+            aria-label="Símbolo da linguagem R"
+            style="font-family: Manrope, sans-serif;
+                   font-size: 56px;
+                   font-weight: 800;"
+          >
+            R
+          </div>
 
+          <span class="tag">
+            OFICINA · PROGRAMAÇÃO E ESTATÍSTICA
+          </span>
 
+          <h3>
+            Introdução à Programação e
+            Análise de Dados com R
+          </h3>
+
+          <p>
+            Oficina introdutória sobre a linguagem R,
+            contemplando fundamentos de programação,
+            manipulação de dados, estatística descritiva,
+            visualização gráfica e aplicações práticas.
+          </p>
+
+          <p>
+            A página da oficina disponibiliza a apostila
+            para leitura on-line e download em PDF.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://cassiushenrique.github.io/OficinaR/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar página da oficina ↗
+          </a>
+
+        </article>
+
+        <article class="project-card">
+
+          <div
+            class="extension-logo"
+            role="img"
+            aria-label="Símbolo do coeficiente de regressão beta"
+          >
+            β
+          </div>
+
+          <span class="tag">
+            OFICINA · REGRESSÃO LINEAR
+          </span>
+
+          <h3>
+            Regressão Linear Aplicada
+            à Engenharia usando R
+          </h3>
+
+          <p>
+            Oficina prática de regressão linear múltipla:
+            análise exploratória, ajuste do modelo,
+            verificação dos pressupostos e interpretação
+            dos resultados no R.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://cassiushenrique.github.io/RegressaoLinear/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar página da oficina ↗
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
 
 
     <!-- =========================================================
